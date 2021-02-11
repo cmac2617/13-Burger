@@ -9,6 +9,16 @@ var burger = {
         cb(res);
       });
     },
+    selectDevoured: function(cb) {
+      orm.selectDevoured("burgers", function(res) {
+        cb(res);
+      });
+    },
+    selectNotDevoured: function(cb) {
+      orm.selectNotDevoured("burgers", function(res) {
+        cb(res);
+      });
+    },
     // The variables cols and vals are arrays.
     insertOne: function(name, cb) {
       orm.insertOne(name, function(res) {

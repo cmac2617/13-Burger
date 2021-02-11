@@ -12,6 +12,24 @@ var orm = {
         cb(result);
       });
     },
+    selectDevoured: function(tableInput, cb) {
+      var queryString = "SELECT * FROM burgers WHERE devoured = true;";
+      connection.query(queryString, function(err, result) {
+        if (err) {
+          throw err;
+        }
+        cb(result);
+      });
+    },
+    selectNotDevoured: function(tableInput, cb) {
+      var queryString = "SELECT * FROM burgers WHERE devoured = false;";
+      connection.query(queryString, function(err, result) {
+        if (err) {
+          throw err;
+        }
+        cb(result);
+      });
+    },
     insertOne: function(name, cb) {
       var queryString = `INSERT INTO BURGERS (burger_name) VALUES ("${name}")`;
   

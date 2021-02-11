@@ -4,9 +4,9 @@ var router = express.Router();
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function(req, res) {
-    burger.selectAll(function(data) {
+    burger.selectNotDevoured(function(data) {
       var hbsObject = {
-        burgers: data
+        notDevouredBurgers: data
       };
       console.log(hbsObject);
       res.render("index", hbsObject);
